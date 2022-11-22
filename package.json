@@ -1,0 +1,21 @@
+{
+  "name": "graphmerge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "^3.7.0",
+    "apollo-server": "^3.10.3",
+    "dotenv": "^16.0.3",
+    "graphqljson": "github:ANISUL-ISLAM-ONI/graphqljson",
+    "mongoose": "^6.6.5",
+    "mongooseidautoincrement": "github:ANISUL-ISLAM-ONI/mongooseidautoincrement",
+    "nodemon": "^2.0.20"
+  }
+}
