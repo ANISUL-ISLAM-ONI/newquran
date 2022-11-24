@@ -67,7 +67,7 @@ module.exports = {
                         if(!temp) note.tags.push(newtag);
                     }
                 }
-                note.save();
+                note = await note.save();
                 note = await note.populate([{path: 'user', model: User}, {path: 'tags', model: Tag}]);
             }
             catch(newerr){

@@ -1,6 +1,42 @@
 const { gql } = require('apollo-server');
 
 module.exports = gql`
+
+type Sura {
+	ayas: Int
+	start: Int
+	name: String
+	tname: String
+	ename: String
+	type: String
+	order: Int
+	rukus: Int
+}
+type Flag {
+    sura: Int
+    aya: Int
+}
+type Sajda {
+    sura: Int
+    aya: Int
+    type: String
+}
+type Meta {
+    suras: [Sura]
+    juzs: [Flag]
+    hizbs: [Flag]
+    manzils: [Flag]
+    rukus: [Flag]
+    pages: [Flag]
+    sajdas: [Sajda]
+}
+type Ayatext {
+    text: String
+}
+type Suratext {
+    name: String
+    aya: [Ayatext]
+}
 type Verse {
     chapter: Int
     verse: Int
@@ -24,8 +60,12 @@ type User {
 }
 type Query {
     notes(chapter: Int, verse: Int, username: String): [Note]
-    versebytag(token: String!, username: String): [Verse]
+    versesbytag(token: String!, username: String): [Verse]
     user(username: String!): User
+    metadata: Meta
+    suratext(type: String): [Suratext]
+    translatedsuratext(type: String): [Suratext]
+    transliterationsuratext(type: String): [Suratext]
 }
 type Mutation {
     createNote(chapter: Int, verse: Int, text: String!, username: String!): Note
