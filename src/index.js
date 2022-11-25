@@ -42,7 +42,7 @@ const mongoose = require('mongoose');
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 
-async function startApolloServer(){
+const startApolloServer = async () => {
     const app = express();
     const httpServer = http.createServer(app);
     let server = new ApolloServer({
@@ -79,4 +79,4 @@ async function startApolloServer(){
     console.log(`🚀 Server ready at http://localhost:4000/`);
 }
 
-startApolloServer();
+module.exports = startApolloServer;
