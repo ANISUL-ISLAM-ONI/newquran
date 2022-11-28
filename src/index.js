@@ -48,6 +48,7 @@ const startApolloServer = async () => {
     let server = new ApolloServer({
         typeDefs,
         resolvers,
+        introspection: process.env.NODE_ENV === 'production',
         csrfPrevention: true,
         cache: 'bounded',
         plugins: [
