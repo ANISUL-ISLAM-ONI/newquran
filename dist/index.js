@@ -84,6 +84,7 @@ var startApolloServer = /*#__PURE__*/function () {
             server = new ApolloServer({
               typeDefs: typeDefs,
               resolvers: resolvers,
+              introspection: process.env.NODE_ENV === 'production',
               csrfPrevention: true,
               cache: 'bounded',
               plugins: [
