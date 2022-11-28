@@ -53,7 +53,7 @@ const startApolloServer = async () => {
         cache: 'bounded',
         plugins: [
             // ApolloServerPluginLandingPageLocalDefault({ embed: true }),
-            ApolloServerPluginLandingPageProductionDefault({ embed: true }),
+            ApolloServerPluginLandingPageProductionDefault({ embed: true, graphRef: process.env.APOLLO_GRAPH_REF}),
             ApolloServerPluginDrainHttpServer({ httpServer }),
         ],
     });
