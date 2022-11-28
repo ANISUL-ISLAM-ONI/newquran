@@ -37,7 +37,7 @@ const express = require('express');
 const http = require('http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { ApolloServerPluginLandingPageLocalDefault } = require('apollo-server-core');
+const { ApolloServerPluginLandingPageLocalDefault } = require('@apollo/server/plugin/landingPage/default');
 const mongoose = require('mongoose');
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
@@ -74,9 +74,10 @@ const startApolloServer = async () => {
     );
 
     // Modified server startup
-    await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+    await new Promise((resolve) => httpServer.listen({ port: process.env.PORT || 4000 }, resolve));
 
-    console.log(`🚀 Server ready at http://localhost:4000/`);
+    console.log(`🚀 Server ready at http://localhost:8080/`);
 }
 
-module.exports = startApolloServer;
+// module.exports = startApolloServer;
+startApolloServer();

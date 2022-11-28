@@ -66,7 +66,7 @@ var express = require('express');
 var http = require('http');
 var cors = require('cors');
 var bodyParser = require('body-parser');
-var _require4 = require('apollo-server-core'),
+var _require4 = require('@apollo/server/plugin/landingPage/default'),
   ApolloServerPluginLandingPageLocalDefault = _require4.ApolloServerPluginLandingPageLocalDefault;
 var mongoose = require('mongoose');
 var typeDefs = require('./graphql/typeDefs');
@@ -135,11 +135,11 @@ var startApolloServer = /*#__PURE__*/function () {
             _context3.next = 9;
             return new Promise(function (resolve) {
               return httpServer.listen({
-                port: 4000
+                port: process.env.PORT || 4000
               }, resolve);
             });
           case 9:
-            console.log("\uD83D\uDE80 Server ready at http://localhost:4000/");
+            console.log("\uD83D\uDE80 Server ready at http://localhost:8080/");
           case 10:
           case "end":
             return _context3.stop();
@@ -151,4 +151,6 @@ var startApolloServer = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
-module.exports = startApolloServer;
+
+// module.exports = startApolloServer;
+startApolloServer();
