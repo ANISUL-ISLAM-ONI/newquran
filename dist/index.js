@@ -90,7 +90,8 @@ var startApolloServer = /*#__PURE__*/function () {
               plugins: [
               // ApolloServerPluginLandingPageLocalDefault({ embed: true }),
               ApolloServerPluginLandingPageProductionDefault({
-                embed: true
+                embed: true,
+                graphRef: process.env.APOLLO_GRAPH_REF
               }), ApolloServerPluginDrainHttpServer({
                 httpServer: httpServer
               })]
