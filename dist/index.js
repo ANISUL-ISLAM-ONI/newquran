@@ -67,7 +67,8 @@ var http = require('http');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var _require4 = require('@apollo/server/plugin/landingPage/default'),
-  ApolloServerPluginLandingPageLocalDefault = _require4.ApolloServerPluginLandingPageLocalDefault;
+  ApolloServerPluginLandingPageLocalDefault = _require4.ApolloServerPluginLandingPageLocalDefault,
+  ApolloServerPluginLandingPageProductionDefault = _require4.ApolloServerPluginLandingPageProductionDefault;
 var mongoose = require('mongoose');
 var typeDefs = require('./graphql/typeDefs');
 var resolvers = require('./graphql/resolvers');
@@ -85,7 +86,9 @@ var startApolloServer = /*#__PURE__*/function () {
               resolvers: resolvers,
               csrfPrevention: true,
               cache: 'bounded',
-              plugins: [ApolloServerPluginLandingPageLocalDefault({
+              plugins: [
+              // ApolloServerPluginLandingPageLocalDefault({ embed: true }),
+              ApolloServerPluginLandingPageProductionDefault({
                 embed: true
               }), ApolloServerPluginDrainHttpServer({
                 httpServer: httpServer
