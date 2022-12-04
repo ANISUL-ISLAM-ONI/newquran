@@ -1,6 +1,6 @@
-const data = require('../../quranfiles/quran-data.json');
+import data from '../../quranfiles/qurandata.js'
 
-module.exports = {
+export default {
     Query: {
         metadata: () => {
             return {

@@ -1,7 +1,7 @@
-const Tag = require('../../models/Tag');
-const User = require('../../models/User');
+import Tag from '../../models/Tag.js';
+import User from '../../models/User.js';
 
-module.exports = {
+export default {
     Query: {
         versesbytag: async (_, {token, username}) => {
             const user = await User.findOne({username: username}).exec();

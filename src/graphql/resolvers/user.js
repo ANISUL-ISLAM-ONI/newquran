@@ -1,7 +1,7 @@
-const User = require("../../models/User")
+import User from "../../models/User.js"
 
 
-module.exports = {
+export default {
     Query: {
         user: async (_, {username}) => {
             let res;

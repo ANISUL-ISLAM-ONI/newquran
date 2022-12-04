@@ -1,4 +1,4 @@
-const { model, Schema } = require('mongoose');
+import { model, Schema } from 'mongoose';
 
 const noteSchema = new Schema({
     chapter: Number,
@@ -9,4 +9,4 @@ const noteSchema = new Schema({
 });
 
 
-module.exports = model('Note', noteSchema);
+export default model('Note', noteSchema);

@@ -1,4 +1,4 @@
-const { model, Schema } = require('mongoose');
+import { model, Schema } from 'mongoose';
 
 const tagSchema = new Schema({
     token: String,
@@ -6,4 +6,4 @@ const tagSchema = new Schema({
     verses: [{ chapter: Number, verse: Number }],
 });
 
-module.exports = model('Tag', tagSchema);
+export default model('Tag', tagSchema);

@@ -1,7 +1,8 @@
-const en_transliteration = require('./en.transliteration.json');
-const tr_transliteration = require('./tr.transliteration.json');
+const BASE = './src/quranfiles/transliterations/'
+const en_transliteration = BASE + 'en.transliteration.json';
+const tr_transliteration = BASE + 'tr.transliteration.json';
 
-module.exports = {
+export default {
     'English : English Transliteration' : en_transliteration,
     'Turkish : Muhammet Abay' : tr_transliteration,
 }

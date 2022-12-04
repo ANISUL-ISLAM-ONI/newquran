@@ -1,4 +1,4 @@
-module.exports = `#graphql
+export default `#graphql
 
 type Sura {
 	ayas: Int

@@ -1,12 +1,12 @@
-const noteResolvers = require('./note');
-const userResolvers = require('./user');
-const versesbytagResolvers = require('./versesbytag');
-const metaResolvers = require('./meta');
-const textResolvers = require('./suratext');
-const translatedsuratextResolver = require('./translatedsuratext');
-const transliterationsuratextResolver = require('./transliterationsuratext');
+import noteResolvers from './note.js';
+import userResolvers from './user.js';
+import versesbytagResolvers from './versesbytag.js';
+import metaResolvers from './meta.js';
+import textResolvers from './suratext.js';
+import translatedsuratextResolver from './translatedsuratext.js';
+import transliterationsuratextResolver from './transliterationsuratext.js';
 
-module.exports = {
+export default {
     Query: {
         ...noteResolvers.Query,
         ...userResolvers.Query,

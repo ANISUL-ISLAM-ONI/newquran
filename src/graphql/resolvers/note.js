@@ -1,8 +1,8 @@
-const Note = require('../../models/Note');
-const Tag = require('../../models/Tag');
-const User = require('../../models/User');
+import Note from '../../models/Note.js';
+import Tag from '../../models/Tag.js';
+import User from '../../models/User.js';
 
-module.exports = {
+export default {
     Query: {
         notes: async (_, {chapter, verse, username}) => {
             let res;

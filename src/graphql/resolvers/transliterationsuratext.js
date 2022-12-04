@@ -1,10 +1,12 @@
-const data = require('../../quranfiles/transliterations');
+import fs from 'fs';
+import datalist from '../../quranfiles/transliterations/index.js';
 
-module.exports = {
+export default {
     Query: {
         transliterationsuratext: async (_, {type}) => {
             // console.log(data[type].quran.sura);
-            return data[type].quran.sura;
+            const raw = fs.readFileSync(datalist[type]);
+            return JSON.parse(raw).quran.sura;
         }
     },
     // Mutation: {
