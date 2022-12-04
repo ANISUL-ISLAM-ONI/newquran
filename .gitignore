@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
+dist
 
     # // "prebuild": "rimraf dist && mkdir dist",
     # // "build": "babel src -d dist --copy-files",
